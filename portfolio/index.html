@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Portfolio</title>
+</head>
+<style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Sofia", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    .bgimg {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('me.jpg');
+        min-height: 100%;
+    }
+</style>
+<body>
+<!--Sidebar with image-->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width: 40%;">
+    <div class="bgimg"></div>
+</nav>
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+ <nav class="w3-sidebar w3-blue w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-blue w3-hover-blue w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+        <i class="fa fa-remove"></i>
+    </a>
+    <div class="w3-bar-block w3-center">
+        <a href="#" class="w3-bar-item w3-button w3-text-black w3-hover-blue" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-black w3-hover-blue" onclick="closeNav()">Portfolio</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-black w3-hover-blue" onclick="closeNav()">About</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-black w3-hover-blue" onclick="closeNav()">Contact</a>
+    </div>
+ </nav>
+
+ <!-- Page Content -->
+  <div class="w3-main w3-padding-large" style="margin-left:40%">
+        <!-- Menu icon to open sidebar -->
+        <span class="w3-button w3-top w3-white w3-xxlarge w3-text-blue   w3-hover-text-white w3-hover-blue" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+    
+    <!-- Header -->
+    <header class="w3-container w3-center w3-text-blue"  style="padding:128px 16px" id="home">
+        <h1 class="w3-jumbo "><b>YahwehBoy</b></h1>
+        <p>Software Developer and Cybersecurity Analyst</p>
+        <img src="me.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+        <img src="me.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+        <button class="w3-button w3-blue w3-hover-light-blue w3-hover-text-white w3-padding-large w3-margin-top">
+        <i class="fa fa-download"></i> Download Resume
+        </button>
+    </header>
+
+    <!-- Portfolio Section -->
+        <div class="w3-padding-32 w3-content" id="portfolio">
+            <h2 class="w3-text-blue">My Portfolio</h2>
+            <hr class="w3-opacity">
+            <!-- Grid for photos -->
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <img src="/w3images/wedding.jpg" style="width:100%">
+                    <img src="/w3images/rocks.jpg" style="width:100%">
+                    <img src="/w3images/sailboat.jpg" style="width:100%">
+                </div>
+                <div class="w3-half">
+                    <img src="/w3images/underwater.jpg" style="width:100%">
+                    <img src="/w3images/chef.jpg" style="width:100%">
+                    <img src="/w3images/wedding.jpg" style="width:100%">
+                    <img src="/w3images/p6.jpg" style="width:100%">
+                </div>
+        </div>  
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-blue w3-padding-32" id="about">
+            <h2>About</h2>
+            <hr class="w3-opacity">
+            <p>I am a Software developer, Cybersecurity Analyst and Ethical hacker,  I'm from Ekiti State, Nigeria. Here is my portfolio website to showcase my skills as a web developer with the knowledge of HTML, CSS and Javascript. Being able to showcase my skills and expertise with this portfolio is essential to my career growth.</p>
+            <h3 class="w3-padding-16">My Skills</h3>
+            <p class="w3-wide">Cybersecurity</p>
+            <div class="w3-light-blue">
+                <div class="w3-container w3-center w3-padding-small w3-blue" style="width:65%">65%</div>
+            </div>
+            <p class="w3-wide">Software Developer</p>
+            <div class="w3-light-blue">
+                <div class="w3-container w3-center w3-padding-small w3-blue" style="width:75%">75%</div>
+            </div>
+            <p class="w3-wide">Web Developer</p>
+            <div class="w3-light-blue">
+                <div class="w3-container w3-center w3-padding-small w3-blue" style="width:85%">85%</div>
+            </div>
+            <br>
+            <div class="w3-row w3-center w3-blue w3-padding-16 w3-section">
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">11+</span><br>Partners
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">35+</span><br>Projects Done
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">78+</span><br>Happy Clients
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">108+</span><br>Meetings
+                </div>
+            </div>
+            <button class="w3-button w3-blue w3-hover-light-blue w3-hover-text-white w3-padding-large w3-section"><i class="fa fa-download"></i> Download Resume</button>
+            <!-- Testimonials -->
+            <h3 class="w3-padding-24">My Reputation</h3>
+            <img src="sabi.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+            <p><span class="w3-large w3-text-blue w3-margin-right">Mr Anthony</span> CEO Sabi Programmers.</p>
+            <p>YahwehBoy is just awesome. I am so happy to have met him!</p><br>
+
+            <img src="ceo2.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+            <p><span class="w3-large w3-text-blue w3-margin-right">Mr Anthony</span> CEO Sensei G-Technology.</p>
+            <p>YahwehBoy saved us from a web disaster.</p><br>
+
+            <!-- Grid for pricing tables -->
+            <h3 class="w3-padding-16">My Price</h3>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+                        <li class="w3-blue w3-xlarge w3-padding-32">Basic</li>
+                        <li class="w3-padding-16">Web Development</li>
+                        <li class="w3-padding-16">Photography</li>
+                        <li class="w3-padding-16">Editing</li>
+                        <li class="w3-padding-16">Cybersecurity</li>
+                        <li class="w3-padding-16">Ethical Hacking</li>
+                        <li class="w3-padding-16">
+                            <h2>$ 50</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <li class="w3-light-blue w3-padding-24">
+                            <button class="w3-button w3-hover-text-blue w3-blue w3-padding-large w3-hover-white">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+                        <li class="w3-cobalt w3-xlarge w3-padding-32">Pro</li>
+                        <li class="w3-padding-16">Web Development</li>
+                        <li class="w3-padding-16">Photography</li>
+                        <li class="w3-padding-16">Ethical Hacking</li>
+                        <li class="w3-padding-16">Cybersecurity</li>
+                        <li class="w3-padding-16">Endless Support</li>
+                        <li class="w3-padding-16">
+                            <h2>$ 100</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <li class="w3-light-blue w3-padding-24">
+                            <button class="w3-button w3-hover-text-blue w3-blue w3-padding-large w3-hover-white">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="w3-padding-32 w3-content w3-text-blue" id="contact" style="margin-bottom:64px">
+            <h2>Contact Me</h2>
+            <hr class="w3-opacity">
+
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Ondo State, Nigeria</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +234 8140 87 9281</p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: omotayoolaolekan01@gmail.com</p>
+            </div>
+            ``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+            <p>Lets get in touch. Send me a message:</p>    
+        </div>
+
+        <!--footer-->
+        <footer class="w3-container w3-padding-64 w3-light-blue w3-center w3-opacity w3-xlarge" style="margin:-24px">
+            <i class="fa fa-facebook-official w3-text-blue w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-text-blue w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-text-blue w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-text-blue w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-text-blue w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-text-blue w3-hover-opacity"></i>
+            <p class="w3-medium w3-text-blue">Designed by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-white">YahwehBoy</a></p>
+        <!-- End footer -->
+        </footer>
+    </div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "50%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>     
+</body>
+</html>
