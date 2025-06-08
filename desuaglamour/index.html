@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Desua Glamour</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/x-icon" href="images/fly.jpeg">
+<style>
+    body, h1,h2,h3,h4,h5,h6{font-family: "Ubuntu", sans-serif;}
+    .w3-row-padding img{margin-bottom: 12px;}
+    /*Set the width of the sidebar to 120px*/
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of th side bar  (120px)*/
+    #main{margin-left: 120px}
+    /*Remove margin from page content on small screen*/
+    @media only screen and (max-width:600px) {#main {margin-left:0}}
+</style>
+</head>
+<body class="w3-black">
+    <!--Icon Bar (sidebar - hidden on small screen)-->
+    <nav class="w3-sidebar w3-yellow w3-bar-block w3-small w3-hide-small w3-center">
+        <!--Avatar image in top left corner-->
+        <img src="images/fly.jpeg" width="100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>   
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>PHOTOS</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-hover-yellow w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+        <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+        <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+    </div>
+    <!--Page Content-->
+    <div class="w3-padding-large" id="main">
+        <!--Header or Home-->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo w3-text-yellow">Desua Glamour</h1>
+            <p class="w3-text-yellow">Beauty and Makeover Artist</p>
+            <img src="images/fly.jpeg" alt="flyer" class="w3-image" width="992" height="1108">
+        </header>
+        <!--About Section-->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-yellow">Welcome to Desua Glamour</h2>
+            <hr style="width: 250px;" class="w3-opacity">
+            <p>Where beauty meets artistry! At Desua Glamour, we're passionate about helping you unleash your inner radiance. As a renowned beauty and makeover artist, we specialize in crafting stunning looks that leave a lasting impression.
+            </p>
+            <br>
+            <button target="_blank" onclick="whatsapp()" class="w3-button w3-yellow w3-hover-green w3-hover-opacity w3-padding-large w3-section" id="what">
+                <i class="fa fa-whatsapp sobtn"></i> WhatsApp
+            </button>
+
+            <button target="_blank" onclick="insta()" class="w3-button w3-yellow w3-hover-green w3-hover-opacity w3-padding-large w3-section" id="insta">
+                <i class="fa fa-instagram"></i> Instagram
+            </button>
+        <!--End of About section-->
+        </div>
+
+        <!--Portfolio Section-->
+        <div class="w3-padding-64 w3-content" id="photos">
+            <h2 class="w3-text-yellow">Gallery</h2>
+            <hr style="width: 300px;" class="w3-opacity">
+
+            <!--Grid of photos-->
+            <div class="w3-row-padding" style="margin: 0 -16px;">
+                <div class="w3-half">
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/mk.jpg" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">Products</span>
+                    </div>    
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/jw.jpg" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">Jewelries</span>
+                    </div> 
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/lk.jpg" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">Training</span>
+                    </div> 
+                </div>
+                <div class="w3-half">
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/sh.webp" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">Make Over</span>
+                    </div>    
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/ss.webp" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">Wigs</span>
+                    </div> 
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/images.jpg" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">Bridal hairstylist</span>
+                    </div>
+                    <div class="w3-display-container">
+                        <img class="w3-hover-opacity" src="images/hdlips.jpg" style="width:100%">
+                        <span class="w3-display-middle w3-large w3-display-hover">MakeUp</span>
+                    </div>
+                <!--End of photo grid-->  
+                </div>
+            <!--End of portfolio section-->    
+            </div>
+
+            <!--Contact section-->
+            <div class="w3-padding-64 w3-content w3-text-yellow" id="contact">
+                <h2 class="w3-text-yellow">Contact Me</h2>
+                <hr class="w3-opacity" style="width: 200px;">
+
+                <div class="w3-section">
+                    <p><i class=" fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>St Thomas church around Arakale, Akure Ondo State, Nigeria</p>
+                    <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>Phone: +2348166131722</p>
+                    <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>Email: desuaglamour99@gmail.com</p>
+                </div><br>
+                <p>Let's get in touch. Send me a message:</p>
+
+                <form method="post" id="contact-form">
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" id="name" required name="Name"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" id="email" required name="Email"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" id="subject" required name="Subject"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" id="message" required name="Message"></p>
+                    <p>
+                        <button class="w3-button w3-yellow w3-hover-green w3-padding-large" id="send-btn" type="button">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </p>
+                </form>
+            <!--End Contact section-->
+            </div>
+        </div>
+        <!--Footer-->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <a href="https://www.instagram.com/desuaglamour07/"><i class="w3-hover-text-yellow fa fa-instagram w3-hover-opacity"></i></a>
+            
+            
+            <a href="https://wa.link/1cr3qf" target="_blank"><i class="w3-hover-text-yellow fa fa-whatsapp w3-hover-opacity"></i></a>
+            <p class="w3-medium">Designed by <a href="#" class="w3-hover-text-yellow">YahwehBoy</a></p>
+        <!--End of footer-->
+        </footer>
+    <!--End of page content-->
+    </div>   
+</body>
+<script>
+    function whatsapp(){
+        location.replace("https://wa.link/1cr3qf")
+    }
+
+    function insta(){
+        location.replace("https://www.instagram.com/desuaglamour07")
+    }
+</script>
+<script>
+    const form = document.getElementById('contact-form');
+    const sendBtn = document.getElementById('send-btn');
+    
+    sendBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    const templateParams = {
+        from_name: name,
+        to_name: 'YahwehBoy',
+        email: email,
+        subject: subject,
+        message_html: message
+    };
+    
+    emailjs.send('service_wux2959', 'template_webac9a', templateParams)
+        .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Email sent successfully!');
+        form.reset();
+        }, (err) => {
+        console.log('FAILED...', err);
+        alert('Email failed to send. Please try again.');
+        });
+    });
+    
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init({
+        publicKey: "lwXRQacL2SPunpIFZ",
+        });
+    })();
+</script>
+<script src="scripts.js"></script>
+</html>
