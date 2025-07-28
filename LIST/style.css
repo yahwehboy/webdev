@@ -1,0 +1,28 @@
+ul{
+    list-style-type: square;
+    background: #3399ff;
+    padding: 20px;
+}
+
+ol{
+    background: #ff9999;
+    list-style-type: lower-latin;
+    padding: 20px;
+}
+
+ol.cars{
+    list-style-position: inside;
+}
+
+ol li{
+    background: #ffe5e5;
+    padding: 5px;
+    
+
+}
+
+ul li{
+    background: #cce5ff;
+    margin: 5px;
+    padding-left: 10px;
+}
