@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Callbacks</title>
+</head>
+<body>
+    <h2>Multiple Callbacks</h2>
+    <div>
+        <button type="button" onclick="loadDoc('myfile.txt', textFunc)">Call text</button><br><br>
+        <button type="button" onclick="loadDoc('myfile.html', htmlFunc)">Call HTML</button><br>
+        <span id="output"></span>
+    </div>
+    <script>
+        function loadDoc(url, cFunction){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {cFunction(this)}
+            xhttp.open("GET", url)
+            xhttp.send()
+        }
+
+        function textFunc(xhttp){
+            document.getElementById("output").innerHTML = xhttp.responseText
+        }
+        function htmlFunc(xhttp){
+            document.getElementById("output").innerHTML = xhttp.responseText
+        }
+    </script>
+    
+</body>
+</html>

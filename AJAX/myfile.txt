@@ -1,0 +1,2 @@
+This is Yahwehboy text file.
+Testing AJAX is Awesom

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <div id="demo">
+        <h2>XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc()">Change Coontent</button>
+    </div>
+    <script>
+        function loadDoc(){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function(){
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "myfile.html");
+            xhttp.send()
+
+        }
+    </script>
+</body>
+</html>
