@@ -286,3 +286,40 @@ footer {
   color: #888;
   padding-top: 3rem;
 }
+
+/* Styles for screens between 320px and 767px wide (common phone range) */
+@media (min-width: 320px) and (max-width: 767px) {
+  .welcome{
+    margin-left: 20px;
+  }
+  .login{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login > input{
+    width: 95%;
+    margin: 10px;
+  }
+
+  .login > button{
+    width: 95%;
+    align-self: center;
+  }
+
+  .app{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .summary{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  } 
+  .summary > .sv{
+    text-align: center;
+    align-self: center;
+  }
+}
