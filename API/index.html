@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API's</title>
+</head>
+<body>
+    <h2>Web Worker</h2>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <div id="fetch">
+        <h2>Fetch API</h2>
+        <p id="demo">Fetch a file to change this text</p>
+        <button id="fetch-btn" type="button" onclick="getText('text-file.txt')">Fetch Text</button>
+    </div>
+    <div id="location">
+        <h2>Geolocation API</h2>
+        <p>Click the button to get Your Cordinates</p>
+        <button type="button" onclick="getLocation()">Get Location</button>
+        <p id="loc"></p>
+    </div>
+    
+    <script>
+        //Web Service Worker
+        let w;
+        function startWorker(){ //checking if browser support web worker
+            if (typeof(w) == "undefined") {
+                w = new Worker("workers.js"); //if supported loads the worker
+            };
+            w.onmessage = function(event){
+                document.getElementById("result").innerHTML = event.data; //loads and initiate the worker
+            };
+            
+        };
+
+        function stopWorker(){
+            w.terminate();  //Terminate worker activities
+            w = undefined; //makes the worker reusable
+        };
+
+        //Fetch API scripts
+        async function getText(file) {
+            myfile = await fetch(file);
+            mytext = await myfile.text();
+            document.getElementById("demo").innerHTML = mytext
+            document.getElementById("fetch-btn").style.display = 'none'
+        }
+
+        //Golocation API scripts
+        const x = document.getElementById("loc")
+
+        function getLocation(){    
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition, showError); //check if geolocation is allowed by browser
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            
+        }
+
+        //shows position
+        function showPosition(position){
+            x.innerHTML = "Latitude:" + position.coords.latitude + "<br>Longitude" + position.coords.longitude;
+        }
+
+        //Error handling
+        function showError(error){
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation." 
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occured."
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

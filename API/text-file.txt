@@ -1,0 +1,3 @@
+This is a text file for Fetch example
+Welcome to Fetch that replaces the use of AJAX
+Fetch is an Asynchronous based API it uses async and await
