@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Newsletter</title>
+    <style>
+        body{
+
+            background-image: url("spa1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        .main{
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+            padding: 40px;
+            max-width: 800px;
+            margin-top: 200px;
+
+        }
+        .main input{
+            padding: 10px;
+            border: black 2px solid;
+
+        }
+        .main button{
+            color:white;
+            padding:10px;
+            background-color: black;
+        }
+
+        @media screen and (max-width: 600px) {
+            body{
+                background-image: url("spa.jpg");
+                background-size: cover;
+                
+            }
+            .main{
+                display: flex;
+                flex-direction: column;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+            }
+            input{
+                margin: 5px;
+                width: 100%;
+            }
+            button{
+                max-width: fit-content;
+                margin: 5px;
+
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Subscribe to Newsletter</h1>
+        <p>Discover the latest effective spa treatments, products, promotion,<br>wellness recipes & secrets to keep you looking beautiful & younger!</p>
+        <form action="">
+            <input type="text" name="name" placeholder="Enter your name">
+            <input type="text" name="email" placeholder="Enter a valid email address">
+            <button type="button">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>
