@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: black;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 60%;
+    color: white;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.text{
+    width: 60%;
+    margin: 120px 10px;
+    padding-bottom: 20px;
+    
+}
+.text h1{
+    font-size: 70px;
+    font-family: Alata, sans-serif;
+}
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.text h3{
+    font-size: 30px;
+    font-family: Agbalumo;
+}
+
+.text button{
+    padding: 15px;
+    border-radius: 30px;
+    color: white;
+    background-color: #1bb554;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 180px;
+    border: none;
+}
+
+.icons{
+    margin-top: 20px;
+    margin-bottom: 20px 
+}
+
+a{
+    color: white;
+    padding: 10px
+}
+
+.image{
+    width: 40%;
+
+}
+.image img{
+    width: 100%;
+}
+@media screen and (max-width:750px){
+    body{
+        overflow: hidden;
+    }
+    .container{
+        background-image: url("spf.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+
+        
+    }
+    .text{
+        max-width: 350px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    
+    }
+    .text h1{
+        font-size: 30px;
+    }
+    .text h3{
+        font-size: 20px;
+    }
+
+    .text button{
+        padding: 10px;
+        width: 140px;
+    }
+    img{display: none;}
+
+}
