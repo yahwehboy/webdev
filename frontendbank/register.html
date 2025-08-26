@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBank - Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            border: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .register-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        
+        .form-control:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="bg-white shadow rounded-4 p-4 p-md-5">
+                        <div class="text-center mb-4">
+                            <div class="bg-primary rounded p-2 d-inline-block mb-3">
+                                <i class="bi bi-person-plus text-white" style="font-size: 2rem;"></i>
+                            </div>
+                            <h1 class="h3 mb-1 text-dark">Create an Account</h1>
+                            <p class="text-muted">Join QuickBank today and start banking smarter</p>
+                        </div>
+                        
+                        <form id="register-form" class="needs-validation" novalidate>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required placeholder="Enter your first name">
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required placeholder="Enter your last name">
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required placeholder="Enter your email address">
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required placeholder="Create a password (min 8 characters)">
+                                <div class="invalid-feedback">Please create a password.</div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="initialDeposit" class="form-label">Initial Deposit</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="initialDeposit" min="10" value="500" required placeholder="Enter initial deposit amount">
+                                </div>
+                                <div class="invalid-feedback">Please enter an initial deposit amount.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-3">Create Account</button>
+                        </form>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-muted mb-2">Already have an account?</p>
+                            <a href="login.html" class="text-primary text-decoration-none">Login here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock database
+        const db = {
+            users: [
+                {
+                    id: 1,
+                    firstName: 'Sarah',
+                    lastName: 'Johnson',
+                    email: 'user@example.com',
+                    password: 'password',
+                    accountNumber: '87654321',
+                    balance: 2500.00,
+                    createdAt: '2023-01-10'
+                },
+                {
+                    id: 2,
+                    firstName: 'John',
+                    lastName: 'Smith',
+                    email: 'john@example.com',
+                    password: 'john123',
+                    accountNumber: '12345678',
+                    balance: 3200.50,
+                    createdAt: '2023-02-15'
+                },
+                {
+                    id: 3,
+                    firstName: 'Emma',
+                    lastName: 'Wilson',
+                    email: 'emma@example.com',
+                    password: 'emma456',
+                    accountNumber: '98765432',
+                    balance: 1800.75,
+                    createdAt: '2023-03-08'
+                },
+                {
+                    id: 4,
+                    firstName: 'Michael',
+                    lastName: 'Brown',
+                    email: 'michael@example.com',
+                    password: 'michael789',
+                    accountNumber: '24681357',
+                    balance: 4500.00,
+                    createdAt: '2023-01-22'
+                }
+            ],
+            transactions: [
+                {
+                    id: 1,
+                    userId: 1,
+                    type: 'deposit',
+                    amount: 2000.00,
+                    description: 'Initial deposit',
+                    balanceAfter: 2000.00,
+                    timestamp: new Date('2023-01-10T09:15:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 2,
+                    userId: 1,
+                    type: 'deposit',
+                    amount: 500.00,
+                    description: 'Salary deposit',
+                    balanceAfter: 2500.00,
+                    timestamp: new Date('2023-01-15T08:30:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 3,
+                    userId: 1,
+                    type: 'transfer',
+                    amount: 150.00,
+                    description: 'Electricity bill payment',
+                    balanceAfter: 2350.00,
+                    timestamp: new Date('2023-01-18T14:20:00').toISOString(),
+                    recipient: 'Utility Company',
+                    account: 'checking'
+                },
+                {
+                    id: 4,
+                    userId: 1,
+                    type: 'withdrawal',
+                    amount: 100.00,
+                    description: 'ATM withdrawal',
+                    balanceAfter: 2250.00,
+                    timestamp: new Date('2023-01-20T16:45:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 5,
+                    userId: 1,
+                    type: 'transfer',
+                    amount: 200.00,
+                    description: 'Rent payment',
+                    balanceAfter: 2050.00,
+                    timestamp: new Date('2023-01-25T10:30:00').toISOString(),
+                    recipient: 'Landlord Inc.',
+                    account: 'checking'
+                },
+                // John's transactions
+                {
+                    id: 6,
+                    userId: 2,
+                    type: 'deposit',
+                    amount: 3000.00,
+                    description: 'Initial deposit',
+                    balanceAfter: 3000.00,
+                    timestamp: new Date('2023-02-15T10:30:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 7,
+                    userId: 2,
+                    type: 'deposit',
+                    amount: 200.50,
+                    description: 'Salary deposit',
+                    balanceAfter: 3200.50,
+                    timestamp: new Date('2023-02-16T08:00:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 8,
+                    userId: 2,
+                    type: 'withdrawal',
+                    amount: 50.00,
+                    description: 'ATM withdrawal',
+                    balanceAfter: 3150.50,
+                    timestamp: new Date('2023-02-18T14:20:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                
+                // Emma's transactions
+                {
+                    id: 9,
+                    userId: 3,
+                    type: 'deposit',
+                    amount: 1500.00,
+                    description: 'Initial deposit',
+                    balanceAfter: 1500.00,
+                    timestamp: new Date('2023-03-08T09:45:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 10,
+                    userId: 3,
+                    type: 'deposit',
+                    amount: 300.75,
+                    description: 'Refund',
+                    balanceAfter: 1800.75,
+                    timestamp: new Date('2023-03-10T11:15:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                
+                // Michael's transactions
+                {
+                    id: 11,
+                    userId: 4,
+                    type: 'deposit',
+                    amount: 4500.00,
+                    description: 'Initial deposit',
+                    balanceAfter: 4500.00,
+                    timestamp: new Date('2023-01-22T13:30:00').toISOString(),
+                    recipient: null,
+                    account: 'checking'
+                },
+                {
+                    id: 12,
+                    userId: 4,
+                    type: 'transfer',
+                    amount: 200.00,
+                    description: 'Gift to daughter',
+                    balanceAfter: 4300.00,
+                    timestamp: new Date('2023-01-25T16:45:00').toISOString(),
+                    recipient: 'Daughter Account',
+                    account: 'checking'
+                }
+            ]
+        };
+
+        // Form validation
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const initialDeposit = parseFloat(document.getElementById('initialDeposit').value);
+            
+            // Validate form
+            let valid = true;
+            if (!firstName) {
+                document.getElementById('firstName').classList.add('is-invalid');
+                valid = false;
+            } else {
+                document.getElementById('firstName').classList.remove('is-invalid');
+            }
+            
+            if (!lastName) {
+                document.getElementById('lastName').classList.add('is-invalid');
+                valid = false;
+            } else {
+                document.getElementById('lastName').classList.remove('is-invalid');
+            }
+            
+            if (!email) {
+                document.getElementById('email').classList.add('is-invalid');
+                valid = false;
+            } else {
+                document.getElementById('email').classList.remove('is-invalid');
+            }
+            
+            if (!password || password.length < 8) {
+                document.getElementById('password').classList.add('is-invalid');
+                valid = false;
+            } else {
+                document.getElementById('password').classList.remove('is-invalid');
+            }
+            
+            if (!initialDeposit || initialDeposit < 10) {
+                document.getElementById('initialDeposit').classList.add('is-invalid');
+                valid = false;
+            } else {
+                document.getElementById('initialDeposit').classList.remove('is-invalid');
+            }
+            
+            if (!valid) return;
+            
+            // Check if email already exists
+            if (db.users.find(u => u.email === email)) {
+                alert('An account with this email already exists. Please use a different email address.');
+                return;
+            }
+            
+            // Generate new user ID and account number
+            const newId = db.users.length + 1;
+            const accountNumber = Math.floor(10000000 + Math.random() * 90000000).toString();
+            
+            // Create new user
+            const newUser = {
+                id: newId,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+                accountNumber: accountNumber,
+                balance: initialDeposit,
+                createdAt: new Date().toISOString().split('T')[0]
+            };
+            
+            // Add user to database
+            db.users.push(newUser);
+            
+            // Create initial deposit transaction
+            const transaction = {
+                id: db.transactions.length + 1,
+                userId: newId,
+                type: 'deposit',
+                amount: initialDeposit,
+                description: 'Initial deposit',
+                balanceAfter: initialDeposit,
+                timestamp: new Date().toISOString(),
+                recipient: null,
+                account: 'checking'
+            };
+            
+            db.transactions.push(transaction);
+            
+            // Store user in localStorage
+            localStorage.setItem('currentUser', JSON.stringify(newUser));
+            localStorage.setItem('db', JSON.stringify(db));
+            
+            // Show success message and redirect
+            alert(`Account created successfully! Welcome to QuickBank, ${firstName}. Your account has been funded with $${initialDeposit.toFixed(2)}.`);
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
