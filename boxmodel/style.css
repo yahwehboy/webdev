@@ -1,0 +1,38 @@
+#a{
+    text-align: center;
+    background-color: aquamarine;
+    padding: 10px;
+    border:rgb(104, 212, 207) 2px  solid;
+}
+
+#a button{
+    border-radius: 30px;
+    border: none;
+    width: 100%;
+    margin-left: 0 ;
+}
+
+.x{
+    border-radius: 30px;
+    text-align: center;
+    margin: 5px;
+    background-color: blanchedalmond;
+    padding: 10px;
+    border: rgb(212, 165, 94) 2px solid;
+    color:  rgb(95, 66, 21);;
+}
+.x button{
+    border-radius: 30px;
+    margin: 0;
+    border: 2px rgb(212, 165, 94) solid;
+    background-color: rgb(95, 66, 21);
+    color: white;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+button{
+    background-color: aqua;
+    padding: 10px;
+    margin-left: 50px;
+}
