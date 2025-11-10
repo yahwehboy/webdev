@@ -1,0 +1,74 @@
+@font-face{
+    src: url("digital-7\(mono\).ttf");
+    font-family: "Digital-7 (mono)";
+
+}
+
+#container{
+    display: flex;
+    background-color: midnightblue;
+    background-image: url("bball1.jpg");
+    background-size: cover;
+    padding: 10px 20px;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.board{
+    color: white;
+    font-family: monospace;
+
+}
+
+.title{
+    font-size: 30px;
+    text-shadow: 0 0 8px red;
+}
+
+.score{
+    background-color: black;
+    font-size: 50px;
+    color: crimson;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 12px auto;
+    font-family: "Digital-7 (mono)";
+}
+
+.btn{
+    border: 1px solid white;
+    background-color: midnightblue;
+    border-radius: 5px;
+    color: white;
+    font-family: "Digital-7 (mono)";
+}
+
+.reset-btn{
+    font-size: 20px;
+    display: block;
+    width: 80px;
+    margin: 12px auto;
+    background-color: midnightblue;
+    border-radius: 5px;
+    border: 1px solid crimson;
+    color: white;
+    padding: 5px;
+}
+
+@media screen and (max-width: 400px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        background-image: url("bball.jpg");
+        background-size: cover;
+    };
+
+    .title{
+        text-shadow: 0px 0px 0px midnightblue;
+    }
+}
