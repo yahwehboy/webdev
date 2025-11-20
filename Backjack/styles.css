@@ -1,0 +1,30 @@
+body{
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+}
+h1{
+    color: goldenrod;
+}
+
+.container{
+    background-color: rgb(117, 175, 16);
+    padding: 20px;
+    text-align: center;
+    max-width: 450px;
+    margin: 2px auto;
+    border-radius: 10px;
+
+}
+
+button{
+    display: block; 
+    width: 150px;
+    margin: 5px auto;
+    padding: 10px;
+    background: goldenrod;
+    font-weight: bold;
+    color: darkolivegreen;
+
+}
+
