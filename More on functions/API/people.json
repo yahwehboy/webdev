@@ -1,0 +1,36 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "age": 30,
+            "email": "john.doe@example.com",
+            "city": "New York",
+            "profession": "Software Engineer"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "age": 28,
+            "email": "jane.smith@example.com",
+            "city": "Los Angeles",
+            "profession": "Product Manager"
+        },
+        {
+            "id": 3,
+            "name": "Michael Johnson",
+            "age": 35,
+            "email": "michael.j@example.com",
+            "city": "Chicago",
+            "profession": "Data Scientist"
+        },
+        {
+            "id": 4,
+            "name": "Sarah Williams",
+            "age": 26,
+            "email": "sarah.w@example.com",
+            "city": "Boston",
+            "profession": "UX Designer"
+        }
+    ]
+}
