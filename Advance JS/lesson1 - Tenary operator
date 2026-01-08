@@ -1,0 +1,13 @@
+const timeMin = 2
+
+// let message = ''
+
+// if (timeMin < 20) {
+//     message = 'You need to try harder!'
+// } else {
+//     message = 'Doing good!'
+// }
+
+const message = timeMin < 20 ? 'You need to try harder!' : timeMin === 20 ? 'Doing great!' : 'Doing good!'
+
+console.log(message)
