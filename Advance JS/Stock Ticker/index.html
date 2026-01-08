@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Ticker</title>
+    <style>
+        .container{
+            background-color: grey;
+            padding: 20px;
+            max-width: 450px;
+            margin: 10px auto;
+            border: 2px solid rgb(17, 17, 17);
+            border-radius: 5px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+        }
+        .card{
+            font-weight: bold;
+            font-family: sans-serif;
+            background: white;
+            max-width: 300px;
+            padding: 10px 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        .card p{
+            margin: 5px 0;
+        }
+        #stock{
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Ticker</h1>
+        <div class="card">
+            <p id="name"></p>
+            <p id="symbol"></p>
+            <div id="stock"><p id="price"></p><p id="icon"></p></div>
+            <p id="time"></p>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
