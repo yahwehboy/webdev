@@ -1,131 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"  />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Bank of America</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/boa.gif" type="image/x-icon" />
-
-    <!-- Google font -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="">
-      <img class="logo" src="images/boa.png" alt="Access Bank logo" />
-      <p class="welcome">Log in to get started</p>
-    </nav>
-    <div class="w3-conntent  w3-padding-64">
-      <form class="login">
-          <input
-            class="login-input login-input-username"
-            type="text"
-            placeholder="Username"
-          />
-          <br>
-          <input
-            class="login-input login-input-password"
-            type="password"
-            placeholder="Password"
-          /><br>
-          <button style="border-radius: 30px;" class="login-btn w3-button w3-hover-text-blue w3-hover-red w3-blue w3-text-red">Log in</button>
-        </form>
-      </div>
-
-    <!-- main -->
-    <main class="app">
-      <!-- Balance -->
-      <div class="balance">
-        <div>
-          <p class="balance-label">Current balance</p>
-          <p class="balance-date">As of <span class="date">01/06/2025</span></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypextbank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <div class="logo">
+                <h1>Hypextbank</h1>
+                <p>Your trusted financial partner</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+            
+            <div class="login-footer">
+                <a href="#">Forgot Password?</a>
+                <p>Need help? Contact support@hypextbank.com</p>
+            </div>
         </div>
-        <p class="balance-value">1000$</p>
-      </div>
+    </div>
+    
+    <!-- Dashboard Screen -->
+    <div id="dashboard-screen" class="screen">
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="nav-right">
+                <div class="notification-icon">
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar"><img src="avatar.jpeg" width="100%"></div>
+                    <span>Jodi Williams</span>
+                </div>
+            </div>
+        </header>
 
-      <!-- Movements -->
-      <div class="movements">
-        <div class="movements-row">
-          <div class="movements-type movements-type-deposit">5 deposit</div>
-          <div class="movements-date">5 days ago</div>
-          <div class="movements-value">1000$</div>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Account Cards Section -->
+            <section class="account-cards">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Checking Account</h3>
+                        <span class="account-number">**** 4832</span>
+                    </div>
+                    <div class="card-balance">
+                        <p>Balance</p>
+                        <h2>$320.00</h2>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-transfer">Transfer</button>
+                        <button class="btn-history">History</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Savings Account</h3>
+                        <span class="account-number">**** 7291</span>
+                    </div>
+                    <div class="card-balance">
+                        <p>Balance</p>
+                        <h2>$6,450,320.00</h2>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-transfer">Transfer</button>
+                        <button class="btn-history">History</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="actions-grid">
+                    <div class="action-item">
+                        <div class="action-icon">💳</div>
+                        <span>Cards</span>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon">🌍</div>
+                        <span>Transfers</span>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon">📊</div>
+                        <span>Investments</span>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon">🎁</div>
+                        <span>Offers</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Transactions -->
+            <section class="recent-transactions">
+                <div class="section-header">
+                    <h3>Recent Transactions</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+
+                <div class="transactions-list">
+                    <div class="transaction-item">
+                        <div class="transaction-icon income">+</div>
+                        <div class="transaction-details">
+                            <h4>Salary Deposit</h4>
+                            <p>Employer Inc. • Today</p>
+                        </div>
+                        <div class="transaction-amount income">+$4,500.00</div>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-icon expense">-</div>
+                        <div class="transaction-details">
+                            <h4>Electric Bill</h4>
+                            <p>Power Company • Yesterday</p>
+                        </div>
+                        <div class="transaction-amount expense">-$120.50</div>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-icon expense">-</div>
+                        <div class="transaction-details">
+                            <h4>Online Shopping</h4>
+                            <p>Amazon • Dec 28</p>
+                        </div>
+                        <div class="transaction-amount expense">-$89.99</div>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-icon income">+</div>
+                        <div class="transaction-details">
+                            <h4>Freelance Work</h4>
+                            <p>Client ABC • Dec 27</p>
+                        </div>
+                        <div class="transaction-amount income">+$1,200.00</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">💳</span>
+                <span class="nav-text">Cards</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">🌍</span>
+                <span class="nav-text">Transfer</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">History</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">Profile</span>
+            </a>
+        </nav>
+
+        <!-- Transfer Popup -->
+        <div id="transfer-popup" class="popup-overlay">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h3>Transfer Money</h3>
+                    <span class="close-btn" id="close-popup">&times;</span>
+                </div>
+
+                <form id="transfer-form" class="transfer-form">
+                    <div class="input-group">
+                        <label for="transfer-type">Transfer Type</label>
+                        <select id="transfer-type" name="transfer-type">
+                            <option value="local">Local Transfer</option>
+                            <option value="international">International Transfer</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="from-account">From Account</label>
+                        <select id="from-account" name="from-account">
+                            <option value="checking">Checking Account (**** 4832)</option>
+                            <option value="savings">Savings Account (**** 7291)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="to-account">To Account</label>
+                        <input type="text" id="to-account" name="to-account" placeholder="Enter account number" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="amount">Amount ($)</label>
+                        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reference">Reference (Optional)</label>
+                        <input type="text" id="reference" name="reference" placeholder="For what purpose?">
+                    </div>
+
+                    <button type="submit" class="btn-transfer-confirm">Send Money</button>
+                </form>
+            </div>
         </div>
-        <div class="movements-row">
-          <div class="movements-type movements-type-withdrawal">
-            5 withdrawal
-          </div>
-          <div class="movements-date">21/9/2022</div>
-          <div class="movements-value">-1000$</div>
+
+        <!-- Cards Page -->
+        <div id="cards-page" class="page-content">
+            <div class="page-header">
+                <h2>My Cards</h2>
+                <button class="add-card-btn">+ Add Card</button>
+            </div>
+
+            <div class="cards-list">
+                <div class="card-item">
+                    <div class="card-front">
+                        <div class="card-brand">SecureBank</div>
+                        <div class="card-number">**** **** **** 4832</div>
+                        <div class="card-holder">Jodi Williams</div>
+                        <div class="card-expiry">12/28</div>
+                    </div>
+                    <div class="card-controls">
+                        <button class="card-action-btn">Block</button>
+                        <button class="card-action-btn">Settings</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-front credit-card">
+                        <div class="card-brand">SecureBank</div>
+                        <div class="card-number">**** **** **** 7291</div>
+                        <div class="card-holder">Jodi Williams</div>
+                        <div class="card-expiry">08/27</div>
+                    </div>
+                    <div class="card-controls">
+                        <button class="card-action-btn">Block</button>
+                        <button class="card-action-btn">Settings</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Summary -->
-      <div class="summary">
-        <p class="summary-label">In</p>
-        <p class="summary-value summary-value-in">1000$</p>
-        <p class="summary-label">Out</p>
-        <p class="summary-value summary-value-out">1000$</p>
-        <p class="summary-label">Interest</p>
-        <p class="summary-value summary-value-interest">1000$</p>
-        <button class="btn-sort">Sort &downarrow;</button>
-      </div>
+        <!-- Local Transfer Page -->
+        <div id="local-transfer-page" class="page-content">
+            <div class="page-header">
+                <h2>Local Transfer</h2>
+            </div>
 
-      <!-- Transfers -->
-      <div class="operation operation-transfer">
-        <h2>Transfer money</h2>
-        <form class="form form-transfer">
-          <input class="form-input form-input-to" type="text" />
-          <input class="form-input form-input-amount" type="number" />
-          <button class="form-btn form-btn-transfer">&rarr;</button>
-          <label class="form-label">Transfer to</label>
-          <label class="form-label">Amount</label>
-        </form>
-      </div>
+            <form class="transfer-form">
+                <div class="input-group">
+                    <label for="local-from-account">From Account</label>
+                    <select id="local-from-account" name="local-from-account">
+                        <option value="checking">Checking Account (**** 4832)</option>
+                        <option value="savings">Savings Account (**** 7291)</option>
+                    </select>
+                </div>
 
-      <!-- Loan -->
-      <div class="operation operation-loan">
-        <h2>Request loan</h2>
-        <form class="form form-loan">
-          <input class="form-input form-input-loan-amount" type="number" />
-          <button class="form-btn form-btn-loan">&rarr;</button>
-          <label class="form-label form-label-loan">Amount</label>
-        </form>
-      </div>
+                <div class="input-group">
+                    <label for="local-to-account">To Account Number</label>
+                    <input type="text" id="local-to-account" name="local-to-account" placeholder="Enter account number" required>
+                </div>
 
-      <!-- Close -->
-      <div class="operation operation-close">
-        <h2>Close account</h2>
-        <form class="form form-close">
-          <input class="form-input form-input-username" type="text" />
-          <input class="form-input form-input-password" type="password" />
-          <button class="form-btn form-btn-close">&rarr;</button>
-          <label class="form-label">Confirm username</label>
-          <label class="form-label">Confirm password</label>
-        </form>
-      </div>
+                <div class="input-group">
+                    <label for="local-recipient-name">Recipient Name</label>
+                    <input type="text" id="local-recipient-name" name="local-recipient-name" placeholder="Enter recipient name" required>
+                </div>
 
-      <!-- Logout -->
-      <p class="logout-timer">
-        You will be logged out in <span class="timer">02:00</span>
-      </p>
-    </main>
+                <div class="input-group">
+                    <label for="local-amount">Amount ($)</label>
+                    <input type="number" id="local-amount" name="local-amount" placeholder="Enter amount" required>
+                </div>
 
-    <!-- footer -->
-    <footer>
-      &copy; <span class="copyright-year">2025</span>,
-      <strong>Bank of America</strong> by Bank of America. All rights reserved.
-    </footer>
+                <div class="input-group">
+                    <label for="local-reference">Reference</label>
+                    <input type="text" id="local-reference" name="local-reference" placeholder="For what purpose?">
+                </div>
 
-    <script src="js/custom.js"></script>
-  </body>
+                <button type="submit" class="btn-transfer-confirm">Send Money</button>
+            </form>
+        </div>
+
+        <!-- International Transfer Page -->
+        <div id="international-transfer-page" class="page-content">
+            <div class="page-header">
+                <h2>International Transfer</h2>
+            </div>
+
+            <form class="transfer-form">
+                <div class="input-group">
+                    <label for="int-from-account">From Account</label>
+                    <select id="int-from-account" name="int-from-account">
+                        <option value="checking">Checking Account (**** 4832)</option>
+                        <option value="savings">Savings Account (**** 7291)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="int-country">Country</label>
+                    <select id="int-country" name="int-country">
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="australia">Australia</option>
+                        <option value="germany">Germany</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="int-beneficiary-name">Beneficiary Name</label>
+                    <input type="text" id="int-beneficiary-name" name="int-beneficiary-name" placeholder="Enter beneficiary name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="int-beneficiary-account">Beneficiary Account</label>
+                    <input type="text" id="int-beneficiary-account" name="int-beneficiary-account" placeholder="Enter account number" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="int-amount">Amount ($)</label>
+                    <input type="number" id="int-amount" name="int-amount" placeholder="Enter amount" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="int-reference">Reference</label>
+                    <input type="text" id="int-reference" name="int-reference" placeholder="For what purpose?">
+                </div>
+
+                <div class="transfer-summary">
+                    <div class="summary-row">
+                        <span>Exchange Rate:</span>
+                        <span>1 USD = 0.85 EUR</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Transfer Fee:</span>
+                        <span>$15.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span>$1,015.00</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-transfer-confirm">Send Money</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
