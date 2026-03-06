@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftRush - Buy Gift Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card-category {
+            cursor: pointer;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .card-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .selected-card {
+            border: 2px solid #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+        
+        .amount-option {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .amount-option:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .amount-option.selected {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .payment-method {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover, .payment-method.active {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container text-center my-2 d-flex align-items-center justify-content-around flex-wrap">
+            <p class="text-dark p-1">Fast</p>
+            <p class="text-dark p-1">Secured</p>
+            <p class="text-dark p-1">Reliable</p>
+        </div>
+        <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="GiftRush Logo"> 
+                    <span class="ms-2 fs-4 fw-normal">GiftRush</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="buy.html">Buy Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="validate.html">Validate Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Buy Digital Gift Cards</h2>
+                
+                <!-- Step 1: Select Category -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Step 1: Select Gift Card Category</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card card-category p-3 text-center" data-category="retail">
+                                    <img src="images/amazon-d97df2eb.svg" class="card-logo mb-2" alt="Retail">
+                                    <h5>Retail</h5>
+                                    <p class="text-muted">Amazon, Walmart, Target</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-category p-3 text-center" data-category="digital">
+                                    <img src="images/apple-e7f3c160.svg" class="card-logo mb-2" alt="Digital">
+                                    <h5>Digital</h5>
+                                    <p class="text-muted">Apple, Google Play, Microsoft</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-category p-3 text-center" data-category="entertainment">
+                                    <img src="images/hulu-0b8fc61f.svg" class="card-logo mb-2" alt="Entertainment">
+                                    <h5>Entertainment</h5>
+                                    <p class="text-muted">Netflix, Spotify, Hulu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Select Brand -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Step 2: Select Brand</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="amazon">
+                                    <img src="images/amazon-d97df2eb.svg" class="card-logo mb-2" alt="Amazon">
+                                    <h6>Amazon</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="apple">
+                                    <img src="images/apple-e7f3c160.svg" class="card-logo mb-2" alt="Apple">
+                                    <h6>Apple</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="hulu">
+                                    <img src="images/hulu-0b8fc61f.svg" class="card-logo mb-2" alt="Hulu">
+                                    <h6>Hulu</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="ebay">
+                                    <img src="images/ebay-c3aa2280.svg" class="card-logo mb-2" alt="eBay">
+                                    <h6>eBay</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="spotify">
+                                    <img src="images/spotify-1e083116.svg" class="card-logo mb-2" alt="Spotify">
+                                    <h6>Spotify</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="steam">
+                                    <img src="images/steam-3ef82748.svg" class="card-logo mb-2" alt="Steam">
+                                    <h6>Steam</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="nordstrom">
+                                    <img src="images/nordstrom-9531b3c0.svg" class="card-logo mb-2" alt="Nordstrom">
+                                    <h6>Nordstrom</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="card card-category p-3 text-center" data-brand="visa">
+                                    <img src="images/visaGift-0a50847d.svg" class="card-logo mb-2" alt="Visa">
+                                    <h6>Visa Gift</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Select Amount -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Step 3: Select Amount</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-2 col-4">
+                                <div class="card amount-option p-3 text-center" data-amount="10">$10</div>
+                            </div>
+                            <div class="col-md-2 col-4">
+                                <div class="card amount-option p-3 text-center" data-amount="25">$25</div>
+                            </div>
+                            <div class="col-md-2 col-4">
+                                <div class="card amount-option p-3 text-center" data-amount="50">$50</div>
+                            </div>
+                            <div class="col-md-2 col-4">
+                                <div class="card amount-option p-3 text-center" data-amount="100">$100</div>
+                            </div>
+                            <div class="col-md-2 col-4">
+                                <div class="card amount-option p-3 text-center" data-amount="200">$200</div>
+                            </div>
+                            <div class="col-md-2 col-4">
+                                <div class="card amount-option p-3 text-center" data-amount="custom">Custom</div>
+                            </div>
+                        </div>
+                        <div id="customAmount" class="mt-3" style="display: none;">
+                            <label for="customAmountInput" class="form-label">Enter custom amount:</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="customAmountInput" placeholder="Enter amount">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Cryptocurrency Payment -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Step 4: Cryptocurrency Payment</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-4">Send the total amount to one of the following wallet addresses:</p>
+                        
+                        <div class="row g-3">
+                            <!-- Bitcoin Wallet -->
+                            <div class="col-md-6">
+                                <div class="card payment-method h-100" data-payment="bitcoin">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-bitcoin fa-3x text-warning mb-3"></i>
+                                        <h5 class="card-title">Bitcoin (BTC)</h5>
+                                        <p class="text-muted small">Network: Bitcoin (BTC)</p>
+                                        <div class="bg-light p-3 rounded mb-2">
+                                            <code class="text-break" style="font-size: 0.85rem;">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</code>
+                                        </div>
+                                        <button type="button" class="btn btn-sm btn-outline-primary copy-btn" data-address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                                            <i class="fa fa-copy"></i> Copy Address
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- USDT Wallet -->
+                            <div class="col-md-6">
+                                <div class="card payment-method h-100" data-payment="usdt">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-dollar fa-3x text-success mb-3"></i>
+                                        <h5 class="card-title">USDT (Tether)</h5>
+                                        <p class="text-muted small">Network: TRC20 (Tron)</p>
+                                        <div class="bg-light p-3 rounded mb-2">
+                                            <code class="text-break" style="font-size: 0.85rem;">TXYZopYhUQqfC1DaF8KzjSRDLnTShGj9pz</code>
+                                        </div>
+                                        <button type="button" class="btn btn-sm btn-outline-primary copy-btn" data-address="TXYZopYhUQqfC1DaF8KzjSRDLnTShGj9pz">
+                                            <i class="fa fa-copy"></i> Copy Address
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info mt-3 mb-0">
+                            <i class="fa fa-info-circle"></i> 
+                            <strong>Important:</strong> After payment, complete the recipient information below. Your gift card will be processed once payment is confirmed on the blockchain.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Recipient Information -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Step 5: Recipient Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <!--
+                        ============================================================================
+                        BUY CARD FORM - Sends order details to Email and Telegram
+                        Form is submitted via JavaScript (form-handler.js)
+                        ============================================================================
+                        -->
+                        <form id="buyCardForm" action="#" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_subject" value="New Gift Card Purchase - GiftRush">
+                            
+                            <!-- Hidden fields to store order data -->
+                            <input type="hidden" name="selectedCard" id="orderSelectedCard">
+                            <input type="hidden" name="amount" id="orderAmount">
+                            <input type="hidden" name="fee" id="orderFee">
+                            <input type="hidden" name="total" id="orderTotal">
+                            <input type="hidden" name="paymentMethod" id="orderPaymentMethod">
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="recipientName" class="form-label">Recipient Name</label>
+                                        <input type="text" class="form-control" id="recipientName" name="recipientName" placeholder="Enter recipient's name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="recipientEmail" class="form-label">Recipient Email</label>
+                                        <input type="email" class="form-control" id="recipientEmail" name="recipientEmail" placeholder="Enter recipient's email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Personal Message (Optional)</label>
+                                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Add a personal message"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Summary Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header">
+                        <h4>Order Summary</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Selected Card:</span>
+                            <span id="selectedCard">None selected</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Amount:</span>
+                            <span id="selectedAmount">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Fee:</span>
+                            <span id="fee">$0.00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between fw-bold">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <!-- 
+                        ============================================================================
+                        PROCEED TO PAYMENT BUTTON
+                        Triggers form submission to Email and Telegram via form-handler.js
+                        ============================================================================
+                        -->
+                        <button type="submit" form="buyCardForm" class="btn btn-primary w-100 mt-4" id="proceedBtn" disabled>Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About GiftRush</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Actions</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="buy.html">Buy Card</a></li>
+                        <li><a href="validate.html">Validate Card</a></li>
+                        <li><a href="#">Sell Card</a></li>
+                        <li><a href="#">Corporate Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>NEWSLETTER</h5>
+                    <p>Subscribe to get notified about product launches, special offers and news.</p>
+                    <!-- 
+                    ============================================================================
+                    NEWSLETTER FORM - Sends subscriber email to Email and Telegram
+                    ============================================================================
+                    -->
+                    <form id="newsletterForm" action="#" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription - GiftRush">
+                        
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-dark" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Social Footer -->
+    <div class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2026 GiftRush. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    ============================================================================
+    EMAILJS SDK - Required for sending emails without CORS issues
+    ============================================================================
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!--
+    ============================================================================
+    FORM HANDLER SCRIPT - Handles Email and Telegram submissions
+    Configure your email and Telegram settings in form-handler.js
+    ============================================================================
+    -->
+    <script src="form-handler.js"></script>
+    
+    <script>
+        // ============================================================================
+        // BUY CARD PAGE - Combined with form handler
+        // Sends order data to email/Telegram when user proceeds to payment
+        // ============================================================================
+        
+        // Simple interactivity for the buy page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category selection
+            const categories = document.querySelectorAll('.card-category');
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    categories.forEach(cat => cat.classList.remove('selected-card'));
+                    this.classList.add('selected-card');
+
+                    // Enable brand selection after category is chosen
+                    document.querySelectorAll('[data-brand]').forEach(brand => {
+                        brand.parentElement.style.display = 'block';
+                    });
+                });
+            });
+
+            // Brand selection
+            const brands = document.querySelectorAll('[data-brand]');
+            brands.forEach(brand => {
+                brand.addEventListener('click', function() {
+                    brands.forEach(b => b.classList.remove('selected-card'));
+                    this.classList.add('selected-card');
+
+                    // Update order summary
+                    const brandName = this.querySelector('h6').textContent;
+                    document.getElementById('selectedCard').textContent = brandName;
+                    document.getElementById('orderSelectedCard').value = brandName;
+
+                    // Enable amount selection after brand is chosen
+                    document.querySelectorAll('[data-amount]').forEach(amount => {
+                        amount.parentElement.style.display = 'block';
+                    });
+
+                    // Enable proceed button
+                    document.getElementById('proceedBtn').disabled = false;
+                });
+            });
+
+            // Amount selection
+            const amounts = document.querySelectorAll('.amount-option');
+            amounts.forEach(amount => {
+                amount.addEventListener('click', function() {
+                    amounts.forEach(a => a.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    let selectedAmount = this.getAttribute('data-amount');
+                    if(selectedAmount === 'custom') {
+                        document.getElementById('customAmount').style.display = 'block';
+                        selectedAmount = 'Custom';
+                    } else {
+                        document.getElementById('customAmount').style.display = 'none';
+                    }
+
+                    document.getElementById('selectedAmount').textContent = '$' + (selectedAmount === 'custom' ? '0.00' : selectedAmount);
+                    document.getElementById('orderAmount').value = selectedAmount === 'custom' ? '0' : selectedAmount;
+
+                    // Calculate fee and total
+                    const amountNum = parseFloat(selectedAmount) || 0;
+                    const fee = amountNum * 0.05; // 5% fee
+                    const total = amountNum + fee;
+
+                    document.getElementById('fee').textContent = '$' + fee.toFixed(2);
+                    document.getElementById('total').textContent = '$' + total.toFixed(2);
+                    document.getElementById('orderFee').value = fee.toFixed(2);
+                    document.getElementById('orderTotal').value = total.toFixed(2);
+                });
+            });
+
+            // Custom amount input
+            document.getElementById('customAmountInput').addEventListener('input', function() {
+                const amount = parseFloat(this.value) || 0;
+                const fee = amount * 0.05;
+                const total = amount + fee;
+
+                document.getElementById('selectedAmount').textContent = '$' + amount.toFixed(2);
+                document.getElementById('fee').textContent = '$' + fee.toFixed(2);
+                document.getElementById('total').textContent = '$' + total.toFixed(2);
+                document.getElementById('orderAmount').value = amount.toFixed(2);
+                document.getElementById('orderFee').value = fee.toFixed(2);
+                document.getElementById('orderTotal').value = total.toFixed(2);
+            });
+
+            // Payment method selection
+            const paymentMethods = document.querySelectorAll('.payment-method[data-payment]');
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    paymentMethods.forEach(m => m.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const paymentType = this.getAttribute('data-payment');
+                    document.getElementById('orderPaymentMethod').value = paymentType.charAt(0).toUpperCase() + paymentType.slice(1);
+                });
+            });
+
+            // Copy address functionality
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const address = this.getAttribute('data-address');
+                    navigator.clipboard.writeText(address).then(() => {
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fa fa-check"></i> Copied!';
+                        this.classList.remove('btn-outline-primary');
+                        this.classList.add('btn-outline-success');
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.classList.remove('btn-outline-success');
+                            this.classList.add('btn-outline-primary');
+                        }, 2000);
+                    }).catch(err => {
+                        alert('Failed to copy address. Please copy manually.');
+                    });
+                });
+            });
+            
+            // ============================================================================
+            // BUY CARD FORM SUBMISSION - Sends to Email and Telegram
+            // ============================================================================
+            document.getElementById('buyCardForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get order data
+                const orderData = {
+                    selectedCard: document.getElementById('orderSelectedCard').value,
+                    amount: document.getElementById('orderAmount').value,
+                    fee: document.getElementById('orderFee').value,
+                    total: document.getElementById('orderTotal').value,
+                    recipientName: document.getElementById('recipientName').value,
+                    recipientEmail: document.getElementById('recipientEmail').value,
+                    message: document.getElementById('message').value,
+                    paymentMethod: 'Pending' // Can be updated based on payment selection
+                };
+                
+                // Validate that a card and amount are selected
+                if (!orderData.selectedCard || orderData.selectedCard === 'None selected') {
+                    alert('⚠️ Please select a gift card brand first.');
+                    return;
+                }
+                
+                if (!orderData.amount || parseFloat(orderData.amount) <= 0) {
+                    alert('⚠️ Please select a valid amount.');
+                    return;
+                }
+                
+                // Send to Email and Telegram via form-handler.js
+                handleBuyCardForm(e, orderData);
+            });
+            
+            // Newsletter form handler
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    handleNewsletterForm(e);
+                });
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftRush - Digital Gift Cards Made Easy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Custom styles for the homepage */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/about.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .card-section {
+            padding: 50px 0;
+        }
+        
+        .card-logo {
+            width: 100%;
+            max-width: 150px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .stats-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/contact-64e596ac.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        
+        .navbar-brand img {
+            width: 90px;
+        }
+        
+        .nav-link {
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        
+        footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                height: auto;
+                padding: 60px 0;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container text-center my-2 d-flex align-items-center justify-content-around flex-wrap">
+            <p class="text-dark p-1">Fast</p>
+            <p class="text-dark p-1">Secured</p>
+            <p class="text-dark p-1">Reliable</p>
+        </div>
+        <nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="GiftRush Logo"> 
+                    <span class="ms-2 fs-4 fw-normal">GiftRush</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buy.html">Buy Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="validate.html">Validate Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <h1 class="display-4 fw-bold mb-4">Digital Gift Cards Made Easy</h1>
+                    <p class="lead mb-4">Purchase and validate digital gift cards instantly. Trusted by thousands of users worldwide for secure and reliable transactions.</p>
+                    <div class="hero-btns d-flex gap-3">
+                        <a href="buy.html" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart me-2"></i>Buy Gift Cards</a>
+                        <a href="validate.html" class="btn btn-outline-light btn-lg"><i class="fa fa-check-circle me-2"></i>Validate Card</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/amazon-d97df2eb.svg" class="card-logo" alt="Amazon Gift Card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Amazon</h5>
+                                    <p class="card-text">Shop with Amazon gift cards</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/apple-e7f3c160.svg" class="card-logo" alt="Apple Gift Card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Apple</h5>
+                                    <p class="card-text">iTunes and App Store</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/hulu-0b8fc61f.svg" class="card-logo" alt="Hulu Gift Card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Hulu</h5>
+                                    <p class="card-text">Stream your favorite shows</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/ebay-c3aa2280.svg" class="card-logo" alt="eBay Gift Card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">eBay</h5>
+                                    <p class="card-text">Shop online marketplace</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Why Choose GiftRush?</h2>
+                <p class="lead">Our platform offers the best experience for buying and validating digital gift cards</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fa fa-bolt"></i>
+                        </div>
+                        <h4>Instant Delivery</h4>
+                        <p>Receive your gift cards instantly after purchase. No waiting, no delays.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <h4>Secure Transactions</h4>
+                        <p>Bank-level security ensures your transactions are always protected.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <h4>Global Access</h4>
+                        <p>Access gift cards from popular retailers worldwide from anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-number">16K+</div>
+                    <p class="h5">Daily Validations</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-number">11K+</div>
+                    <p class="h5">Digital Card Purchases</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-number">19K+</div>
+                    <p class="h5">Daily Transactions</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-number">4.8</div>
+                    <p class="h5">Customer Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">What Our Customers Say</h2>
+                <p class="lead">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white">
+                        <div class="rating mb-3">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"GiftRush made buying gift cards so easy. I got my Amazon gift card instantly and the recipient loved it!"</p>
+                        <h6 class="text-muted">- Sarah Johnson</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white">
+                        <div class="rating mb-3">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"The validation feature saved me from a fake gift card. Highly recommend for security-conscious users."</p>
+                        <h6 class="text-muted">- Michael Chen</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white">
+                        <div class="rating mb-3">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"I use GiftRush for all my corporate gifting needs. The bulk purchase option is fantastic!"</p>
+                        <h6 class="text-muted">- Emma Rodriguez</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+            <p class="lead mb-4">Join thousands of satisfied customers who trust GiftRush for their gift card needs</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="buy.html" class="btn btn-light btn-lg">Buy Gift Cards Now</a>
+                <a href="about.html" class="btn btn-outline-light btn-lg">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About GiftRush</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Actions</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="buy.html">Buy Card</a></li>
+                        <li><a href="validate.html">Validate Card</a></li>
+                        <li><a href="#">Sell Card</a></li>
+                        <li><a href="#">Corporate Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>NEWSLETTER</h5>
+                    <p>Subscribe to get notified about product launches, special offers and news.</p>
+                    <!-- 
+                    ============================================================================
+                    NEWSLETTER FORM - Sends subscriber email to Email and Telegram
+                    ============================================================================
+                    -->
+                    <form class="newsletter-form" action="https://formsubmit.co/your-email@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription - GiftRush">
+                        
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-dark" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Social Footer -->
+    <div class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2026 GiftRush. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    ============================================================================
+    FORM HANDLER SCRIPT - Handles Email and Telegram submissions
+    Configure your email and Telegram settings in form-handler.js
+    ============================================================================
+    -->
+    <script src="form-handler.js"></script>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

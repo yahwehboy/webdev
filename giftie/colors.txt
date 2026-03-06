@@ -1,0 +1,12 @@
+Primary: Deep Navy — #0B1F3A
+
+Accent: Steel Blue — #3A6EA5
+
+Background: Light Grey — #F2F4F7
+
+Text: Dark Charcoal — #1F2937
+
+Buttons: Muted Blue — #2563EB
+
+
+GIFTRUSH

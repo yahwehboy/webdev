@@ -1,0 +1,56 @@
+main{
+    background-image: url('images/about.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+.mybg{
+    background: black;
+    opacity: 0.8;
+    color: white;
+    border-radius: 10px;
+}
+
+.k{
+    color: black;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    main {
+        min-height: auto;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .mybg {
+        width: 90% !important;
+        margin: 10px auto !important;
+    }
+
+    .d-flex.flex-lg-row {
+        flex-direction: column !important;
+    }
+
+    .w-100.w-lg-50 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .d-flex.flex-column.flex-md-row {
+        flex-direction: column !important;
+    }
+
+    .number {
+        margin: 10px 0;
+    }
+
+    .p-lg-5 {
+        padding: 15px !important;
+    }
+}
