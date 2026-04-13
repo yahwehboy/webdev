@@ -1,0 +1,914 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.screen {
+    display: none;
+    height: 100vh;
+    width: 100%;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Login Screen Styles */
+#login-screen {
+    background: linear-gradient(135deg, #6a11cb 0%, #002856 100%);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    text-align: center;
+}
+
+.logo h1 {
+    color: #002856;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.logo p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #002856;
+    box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px;
+    background: #002856;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: #023876;
+}
+
+.login-footer {
+    margin-top: 25px;
+}
+
+.login-footer a {
+    color: #002856;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.login-footer p {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* Dashboard Styles */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.nav-left h2 {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    position: relative;
+    margin-right: 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #002856;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.main-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.account-cards {
+    margin-bottom: 25px;
+}
+
+.card {
+    background: linear-gradient(135deg, #6a11cb 0%, #002856 100%);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.account-number {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.card-balance {
+    margin-bottom: 20px;
+}
+
+.card-balance p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.card-balance h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-transfer, .btn-history {
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    flex: 1;
+}
+
+.btn-transfer:hover, .btn-history:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.quick-actions {
+    margin-bottom: 25px;
+}
+
+.quick-actions h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.action-item:hover {
+    transform: translateY(-5px);
+}
+
+.action-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.action-item span {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.recent-transactions {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.view-all {
+    color: #002856;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.income {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.expense {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.failed {
+    background: rgba(255, 69, 0, 0.15) !important;
+    color: #ff4500 !important;
+}
+
+.failed-badge {
+    display: inline-block;
+    background: #ff4500;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.transaction-details {
+    flex-grow: 1;
+}
+
+.transaction-details h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.transaction-details p {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.transaction-amount {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    background: white;
+    border-top: 1px solid #eee;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #777;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: color 0.3s;
+    flex: 1;
+    max-width: 80px;
+}
+
+.nav-item.active {
+    color: #002856;
+    background: rgba(37, 117, 252, 0.1);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.nav-text {
+    font-size: 0.75rem;
+}
+
+/* Transfer Popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.popup-header h3 {
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.close-btn {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #777;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transfer-form {
+    padding: 20px;
+}
+
+.transfer-form .input-group {
+    margin-bottom: 20px;
+}
+
+.btn-transfer-confirm {
+    width: 100%;
+    padding: 16px;
+    background: #002856;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-transfer-confirm:hover {
+    background: #1a68e8;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 280px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-header {
+    background: linear-gradient(135deg, #6a11cb 0%, #002856 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar-large {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.user-info p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.dropdown-body {
+    padding: 10px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background: #f5f7fa;
+}
+
+.menu-item span:first-child {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.logout-btn {
+    color: #ff4757;
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Page Content */
+.page-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 10;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.page-content.active {
+    display: block;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.add-card-btn {
+    padding: 8px 16px;
+    background: #002856;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #6a11cb 0%, #002856 100%);
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front.credit-card {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+.card-brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-number {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.card-holder, .card-expiry {
+    display: inline-block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.card-holder {
+    margin-right: 20px;
+}
+
+.card-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.card-action-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card-action-btn:hover {
+    background: #f5f7fa;
+}
+
+.transfer-summary {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: none;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px 20px;
+        width: 90%;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .add-card-btn {
+        align-self: flex-end;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .account-cards {
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .recent-transactions {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 10px 15px;
+    }
+
+    .nav-left h2 {
+        font-size: 1.1rem;
+    }
+
+    .account-number {
+        font-size: 0.8rem;
+    }
+
+    .card-balance h2 {
+        font-size: 1.5rem;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-nav {
+        padding: 8px 0;
+    }
+
+    .nav-text {
+        font-size: 0.7rem;
+    }
+
+    .card-controls {
+        flex-direction: column;
+    }
+
+    .card-action-btn {
+        width: 100%;
+    }
+
+    .login-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-group input,
+    .input-group select {
+        padding: 12px;
+    }
+
+    .btn-login {
+        padding: 14px;
+    }
+
+    .page-content {
+        padding: 15px;
+    }
+
+    .card-front {
+        padding: 15px;
+        min-height: 130px;
+    }
+
+    .card-number {
+        font-size: 1.1rem;
+    }
+
+    .transfer-summary {
+        padding: 10px;
+    }
+}
+
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 320px) {
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        flex: 1 0 30%;
+        padding: 3px;
+    }
+
+    .nav-icon {
+        font-size: 1rem;
+    }
+
+    .nav-text {
+        font-size: 0.6rem;
+    }
+}
+
+/* Large screens (tablets, 769px and up) */
+@media (min-width: 769px) {
+    .login-container {
+        max-width: 500px;
+    }
+
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .bottom-nav {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
