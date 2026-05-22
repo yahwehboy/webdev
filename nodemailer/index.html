@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Bulk Email Sender</h1>
+            <p>Send HTML emails to multiple recipients</p>
+        </header>
+
+        <form id="emailForm" enctype="multipart/form-data">
+            <!-- SMTP Configuration -->
+            <section class="section">
+                <h2>SMTP Configuration</h2>
+                <div class="form-group">
+                    <label for="smtpPreset">SMTP Preset (Quick Select)</label>
+                    <select id="smtpPreset">
+                        <option value="custom">Custom</option>
+                        <option value="gmail">Gmail</option>
+                        <option value="prospectortech">Prospectortech</option>
+                        <option value="outlook">Outlook/Hotmail</option>
+                        <option value="yahoo">Yahoo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="smtpHost">SMTP Host</label>
+                    <input type="text" id="smtpHost" value="smtp.1and1.com" required>
+                    <small>Try smtp.ionos.com or smtp.gmail.com</small>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="smtpPort">Port</label>
+                        <input type="number" id="smtpPort" value="587" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="smtpSecure">Secure (SSL/TLS)</label>
+                        <select id="smtpSecure">
+                            <option value="true">Yes (465)</option>
+                            <option value="false" selected>No (587)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="smtpUser">Email Address</label>
+                    <input type="email" id="smtpUser" value="cathiesoto@manna-usa.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="smtpPass">Password</label>
+                    <input type="password" id="smtpPass" value="Honey@1993!!" required>
+                    <small>Enter your email password</small>
+                </div>
+            </section>
+
+            <!-- Email Content -->
+            <section class="section">
+                <h2>Email Content</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="senderName">Sender Name</label>
+                        <input type="text" id="senderName" value="IT Team" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="fromAddress">From Address</label>
+                        <input type="email" id="fromAddress" value="cathiesoto@manna-usa.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" value="Important Security Alert" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipients">Recipients (one per line)</label>
+                    <textarea id="recipients" rows="5" placeholder="recipient1@example.com&#10;recipient2@example.com"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="htmlBody">HTML Body</label>
+                    <textarea id="htmlBody" rows="15" required>
+<html>
+  <head></head>
+  <body>
+    <p><strong>Dear User,</strong></p>
+    <p>You need to <strong>reset your password immediately</strong> to secure your account.</p>
+    <p><button type="submit" style="background-color: yellow;">
+      <a href="https://google.com" style="color: blue; font-weight: bold; text-decoration: none;">Click Here</a></button>
+    </p>
+    <p>This link will expire in 24 hours.</p>
+    <p>Best regards,<br>
+       <em>Your IT Team</em>
+    </p>
+  </body>
+</html>
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="attachments">Attachments (optional)</label>
+                    <input type="file" id="attachments" multiple>
+                    <small>Hold Ctrl (or Cmd on Mac) to select multiple files</small>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button type="button" id="previewBtn" class="btn btn-secondary">Preview Email</button>
+                <button type="submit" id="sendBtn" class="btn btn-primary">Send Emails</button>
+            </div>
+        </form>
+
+        <!-- Status/Log -->
+        <section class="section" id="logSection" style="display: none;">
+            <h2>Status Log</h2>
+            <div id="logOutput"></div>
+        </section>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Email Preview</h2>
+            <div id="previewContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+</html>
