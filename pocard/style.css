@@ -1,0 +1,53 @@
+.container{
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+   background: linear-gradient(to bottom, #969090, #000000);
+   border-radius: 30px;
+   box-shadow: 0 4px 8px 0;
+}
+
+.image .price{
+    position: absolute;
+    bottom: 92%;
+    right: 38%;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 0 0 5px 5px;
+}
+
+.text{
+    text-align: left;
+    display: flex;
+    padding: 20px;
+}
+
+h2, h3, .stars{
+    color: red;
+}
+
+p{
+    color: white;
+}
+
+.right, .left{
+    width: 50%;
+    padding: 10px;
+}
+
+.left{
+    border-right: 2px solid red;
+}
+
+button{
+    text-align: center;
+    width: 120px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: red;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
