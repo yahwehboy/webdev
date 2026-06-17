@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Eagle Vault</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome {{ username }}!</h1>
+      <a href="/logout">Logout</a>
+      <hr />
+      <h3>Add Password</h3>
+      <form method="POST">
+        <input type="text" placeholder="Website" name="website" required />
+        <input
+          type="text"
+          placeholder="Username"
+          name="site_username"
+          required
+        />
+        <input
+          type="password"
+          id="passwordField"
+          placeholder="Password"
+          name="site_password"
+          required
+        />
+        <button type="button" onclick="generatePassword()">
+          Generate Password
+        </button>
+        <button type="submit">Save Password</button>
+      </form>
+      <hr />
+      <h3>Your Passwords</h3>
+      <table>
+        <tr>
+          <th>Website</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+        {% for p in passwords %}
+        <tr>
+          <td>{{ p[1] }}</td>
+          <td>{{ p[2] }}</td>
+          <td>{{ p[3] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
